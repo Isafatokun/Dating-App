@@ -11,7 +11,7 @@ export class AccountService {
 
   baseUrl = "https://localhost:7114/api/";
   private currentUserSource = new BehaviorSubject<User | null>(null);
-  currentUsers$ = this.currentUserSource.asObservable();
+  currentUser$ = this.currentUserSource.asObservable();
 
   constructor(private http: HttpClient) { }
 
