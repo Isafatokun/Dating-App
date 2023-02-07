@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Member } from 'src/app/_modules/member';
+import { MembersService } from 'src/app/_services/members.service';
 
 @Component({
   selector: 'app-member-list',
@@ -7,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class MemberListComponent {
 
+  members$ : Observable<Member[]> | undefined;
+
+  constructor(private memberService : MembersService) { }
+
+  ngOnInit(): void {
+    this.members$ = this.memberService.getMembers();
+  }
 }
