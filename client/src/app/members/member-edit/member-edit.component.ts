@@ -38,7 +38,7 @@ export class MemberEditComponent {
     this.memberService.getMember(this.user?.username).subscribe({
       next: member => this.member = member
     })
-  }
+  }>
 
   updateMember() {
     this.memberService.updateMember(this.editForm?.value).subscribe({
