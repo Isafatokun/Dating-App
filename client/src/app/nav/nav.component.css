@@ -1,5 +1,10 @@
 .dropdown-toggle,
 .dropdown-item {
   cursor: pointer;
-  /* color: white; */
+}
+
+img {
+  max-height: 40px;
+  border : 1px solid #ffffff;
+  border-radius: 50%;
 }

@@ -13,6 +13,7 @@ import { MembersService } from 'src/app/_services/members.service';
   styleUrls: ['./member-edit.component.css']
 })
 export class MemberEditComponent {
+
   @ViewChild('editForm') editForm: NgForm | undefined;
   @HostListener('window:beforeunload', ['$event']) unloadNotification($event: any) {
     if (this.editForm?.dirty) {
@@ -38,7 +39,7 @@ export class MemberEditComponent {
     this.memberService.getMember(this.user?.username).subscribe({
       next: member => this.member = member
     })
-  }>
+  }
 
   updateMember() {
     this.memberService.updateMember(this.editForm?.value).subscribe({
