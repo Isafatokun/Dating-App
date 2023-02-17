@@ -15,7 +15,7 @@ namespace API.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     UserName = table.Column<string>(type: "TEXT", nullable: true),
                     PasswordHash = table.Column<byte[]>(type: "BLOB", nullable: true),
@@ -33,7 +33,7 @@ namespace API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.id);
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -54,7 +54,7 @@ namespace API.Migrations
                         name: "FK_Photos_Users_AppUserid",
                         column: x => x.AppUserid,
                         principalTable: "Users",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
