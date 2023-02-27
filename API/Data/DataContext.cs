@@ -44,6 +44,5 @@ namespace API.Data
                 .WithMany(m => m.MessagesReceived)
                 .OnDelete(DeleteBehavior.Restrict);
         }
-
     }
 }
